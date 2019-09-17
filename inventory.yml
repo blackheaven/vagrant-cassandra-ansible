@@ -1,0 +1,19 @@
+---
+all:
+  hosts:
+    node1:
+      ip: 172.172.177.21
+    node2:
+      ip: 172.172.177.22
+    node3:
+      ip: 172.172.177.23
+  children:
+    cluster-nodes:
+      hosts:
+        node1:
+        node2:
+        node3:
+    seed-nodes:
+      hosts:
+        node1:
+        node2:
