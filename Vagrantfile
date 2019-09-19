@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
 
   inventory["all"]["hosts"].each do |host_name, attributes|
     config.vm.define host_name do |machine|
-      machine.vm.network "private_network", ip: attributes["ip"]
+      machine.vm.network "private_network", ip: attributes["ansible_host"]
       machine.vm.provider "virtualbox" do |vbox|
         vbox.memory = "1024"
         vbox.cpus = "1"
