@@ -8,12 +8,12 @@ cassandra_hints_directory: /opt/cassandra/data/hints
 cassandra_commitlog_directory: /opt/cassandra/data/commitlogs
 cassandra_saved_caches_directory: /opt/cassandra/data/saved_caches
 
-cassandra_seeds_resolved: "{{ groups['seed-nodes'] | map('extract', hostvars, ['ansible_ssh_host']) | join(',') }}"
+cassandra_seeds_resolved: "{{ groups['seed-nodes'] | map('extract', hostvars, ['ansible_host']) | join(',') }}"
 
 #For IP Address configuration in YML
-broadcast_address: "{{ hostvars[inventory_hostname]['ansible_ssh_host'] }}"
-listen_address: "{{ hostvars[inventory_hostname]['ansible_ssh_host'] }}"
-broadcast_rpc_address: "{{ hostvars[inventory_hostname]['ansible_ssh_host'] }}"
+broadcast_address: "{{ hostvars[inventory_hostname]['ansible_host'] }}"
+listen_address: "{{ hostvars[inventory_hostname]['ansible_host'] }}"
+broadcast_rpc_address: "{{ hostvars[inventory_hostname]['ansible_host'] }}"
 
 #Port configurations
 cassandra_port: 9042
