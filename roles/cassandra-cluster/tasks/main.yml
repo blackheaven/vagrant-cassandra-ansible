@@ -11,7 +11,7 @@
   when: java_version is failed
 
 - name: installJava
-  apt: name=openjdk-11-jdk state=present
+  apt: name=openjdk-8-jdk state=present
   when: java_version is failed
 
 - stat:

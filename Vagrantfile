@@ -1,10 +1,10 @@
 require 'rbconfig'
 require 'yaml'
 
-inventory = YAML.load_file("inventory.yml")
+inventory = YAML.load_file("inventory-test.yml")
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "debian/buster64"
+  config.vm.box = "debian/stretch64"
 
   inventory["all"]["hosts"].each do |host_name, attributes|
     config.vm.define host_name do |machine|

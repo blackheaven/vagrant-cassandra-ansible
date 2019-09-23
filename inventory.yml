@@ -2,14 +2,14 @@
 all:
   hosts:
     node1:
-      ansible_host: 172.172.177.21
-      ansible_ssh_private_key_file: .vagrant/machines/node1/virtualbox/private_key
+      ansible_host: 1.2.3.4
+      ansible_ssh_private_key_file: /path_to/private_key
     node2:
-      ansible_host: 172.172.177.22
-      ansible_ssh_private_key_file: .vagrant/machines/node2/virtualbox/private_key
+      ansible_host: 1.2.3.5
+      ansible_ssh_private_key_file: /path_to/private_key
     node3:
-      ansible_host: 172.172.177.23
-      ansible_ssh_private_key_file: .vagrant/machines/node3/virtualbox/private_key
+      ansible_host: 1.2.3.6
+      ansible_ssh_private_key_file: /path_to/private_key
   children:
     cluster-nodes:
       hosts:
@@ -19,6 +19,6 @@ all:
     seed-nodes:
       hosts:
         node1:
-          ansible_host: 172.172.177.21
+          ansible_host: 1.2.3.4
         node2:
-          ansible_host: 172.172.177.22
+          ansible_host: 1.2.3.5
